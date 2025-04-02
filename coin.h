@@ -1,4 +1,8 @@
-#include <GL/glut.h>  // library untuk menggunakan OpenGL dan GLUT
+#ifndef COIN_H
+#define COIN_H
+
+#include <GL/glut.h>  // Library untuk menggunakan OpenGL dan GLUT
+#include <cmath>      // Untuk fungsi trigonometri seperti cos() dan sin()
 
 // Fungsi untuk menggambar lingkaran (koin)
 void drawCircle(float radius, float xCenter, float yCenter) {
@@ -11,6 +15,9 @@ void drawCircle(float radius, float xCenter, float yCenter) {
     }
     glEnd();
 }
+
+#endif // COIN_H
+
 
 // Fungsi untuk menggambar objek (koin)
 void display() {
