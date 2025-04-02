@@ -20,3 +20,31 @@ int main(int argc, char** argv) {
     glutMainLoop();  // Mulai loop utama GLUT
     return 0;
 }
+
+#ifndef ROAD_H
+#define ROAD_H
+
+#include <GL/glut.h>  // Library untuk menggunakan OpenGL dan GLUT
+
+// Function to draw the road
+void displayRoad() {
+    // Set the road color to black
+    glColor3f(0.0f, 0.0f, 0.0f);
+    glBegin(GL_POLYGON);
+    glVertex2f(-1.0f, -0.1f);  // Bottom-left
+    glVertex2f(1.0f, -0.1f);   // Bottom-right
+    glVertex2f(1.0f, 0.1f);    // Top-right
+    glVertex2f(-1.0f, 0.1f);   // Top-left
+    glEnd();
+
+    // Draw white lane markings
+    glColor3f(1.0f, 1.0f, 1.0f);
+    glBegin(GL_LINES);
+    for (float i = -1.0f; i < 1.0f; i += 0.2f) {
+        glVertex2f(i, 0.0f);        // Start of the line
+        glVertex2f(i + 0.1f, 0.0f); // End of the line
+    }
+    glEnd();
+}
+
+#endif // ROAD_H
